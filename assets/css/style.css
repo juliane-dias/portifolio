@@ -1,3 +1,6 @@
+/* --- style.css --- */
+
+/* 1. Grade (Grid) */
 .bg-grid-pattern {
     background-size: 50px 50px;
     background-image: 
@@ -5,11 +8,12 @@
         linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
 }
 
+/* 2. Cursor Piscando */
 .cursor-blink {
     display: inline-block;
     width: 10px;
     height: 20px;
-    background-color: #4ade80;
+    background-color: #4ade80; /* green-400 */
     vertical-align: middle;
     margin-left: 4px;
     animation: blink 1s step-end infinite;
@@ -20,6 +24,7 @@
     50% { opacity: 0; }
 }
 
+/* 3. Botão com Glow */
 .btn-glow {
     box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
     transition: all 0.3s ease;
@@ -31,20 +36,11 @@
     transform: translateY(-1px);
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* --- ANIMAÇÃO NYAN CAT PROGRESS BAR --- */
-
-/* 1. O Container da Trilha (O Arco-íris) */
+/* 4. Animação Nyan Cat */
 .nyan-trail-container {
-    /* Começa com largura 0 e vai crescer */
     width: 0%;
     height: 100%;
-    /* Gradiente clássico do arco-íris do Nyan Cat (listrado) */
+    /* Gradiente do arco-íris */
     background: linear-gradient(
         to bottom,
         #FF0000 0%, #FF0000 16.6%,
@@ -54,28 +50,30 @@ body {
         #0099FF 66.4%, #0099FF 83%,
         #6633FF 83%, #6633FF 100%
     );
-    /* Aplica a animação */
     animation: nyanProgress 8s linear infinite;
-    border-radius: 9999px 0 0 9999px; /* Arredonda só o começo */
+    border-radius: 9999px 0 0 9999px;
     position: relative;
 }
 
-/* 2. A Animação de crescimento */
 @keyframes nyanProgress {
-    0% { width: 5%; }  /* Começa um pouquinho cheio pra caber o gato */
-    100% { width: 100%; } /* Enche até o final */
+    0% { width: 5%; }
+    100% { width: 100%; }
 }
 
-/* 3. O Gato (GIF) */
 .nyan-cat-gif {
     position: absolute;
-    /* Posiciona o gato na ponta direita da trilha de arco-íris */
-    right: -20px; /* -20px faz ele "sair" um pouco da barra */
+    right: -20px;
     top: 50%;
-    transform: translateY(-50%); /* Centraliza verticalmente */
-    height: 35px; /* Altura do gato */
+    transform: translateY(-50%);
+    height: 35px;
     width: auto;
     z-index: 20;
-    /* Adiciona um filtro para deixar o gato com visual mais "pixel art retrô" no escuro */
     filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.5));
+}
+
+/* 5. Reset Básico */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
