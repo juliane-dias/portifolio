@@ -31,33 +31,29 @@
     transform: translateY(-1px);
 }
 
-.nyan-trail-container {
+.rainbow-progress-bar {
     width: 0%;
     background: linear-gradient(
-        to bottom,
-        #FF0000 0%, #FF0000 16.6%,
-        #FF9900 16.6%, #FF9900 33.2%,
-        #FFFF00 33.2%, #FFFF00 49.8%,
-        #33FF00 49.8%, #33FF00 66.4%,
-        #0099FF 66.4%, #0099FF 83%,
-        #6633FF 83%, #6633FF 100%
+        90deg, 
+        #FF0000, #FF9900, #FFFF00, #33FF00, #0099FF, #6633FF
     );
-    animation: nyanProgress 8s linear infinite;
-    position: relative;
+    animation: expand 8s linear infinite;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    position: relative;
 }
 
-.nyan-cat-gif {
-    height: 140%;
-    width: auto;
-    margin-right: -10px;
-    z-index: 20;
-    image-rendering: pixelated;
+.sparkle-effect {
+    width: 30px;
+    height: 100%;
+    background: white;
+    filter: blur(8px);
+    opacity: 0.7;
+    box-shadow: 0 0 15px 5px white;
 }
 
-@keyframes nyanProgress {
+@keyframes expand {
     0% { width: 0%; }
     100% { width: 100%; }
 }
