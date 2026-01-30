@@ -8,19 +8,16 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* O Grid estilo "Matrix" no fundo */
 .bg-grid-pattern {
-    /* Define o tamanho do quadradinho */
-    background-size: 40px 40px;
+    /* Tamanho do quadrado */
+    background-size: 50px 50px;
     
-    /* Cria as linhas do grid (brancas com 5% de opacidade para ficar sutil) */
-    background-image:
-        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    /* Linhas da grade (aumentei a opacidade para 0.08 para ficar visível) */
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
         
-    /* (Opcional) Faz o grid desaparecer suavemente nas bordas para não cortar seco */
-    mask-image: linear-gradient(to bottom, transparent, 5%, white, 95%, transparent);
-    -webkit-mask-image: linear-gradient(to bottom, transparent, 5%, white, 95%, transparent);
+    /* (Opcional) Se quiser pontilhada em vez de linha reta, avise! */
 }
 
 /* Animação do cursor piscando */
@@ -49,5 +46,6 @@ body {
     box-shadow: 0 0 25px rgba(37, 99, 235, 0.7);
     background-color: #3b82f6; /* blue-500 */
 }
+
 
 
