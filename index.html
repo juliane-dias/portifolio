@@ -7,11 +7,11 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=4.0">
 </head>
 <body class="bg-gray-950 text-green-400 h-screen flex flex-col items-center justify-center p-4 overflow-hidden relative">
 
-    <div class="absolute inset-0 z-0 bg-grid-pattern pointer-events-none"></div>
+    <div class="absolute inset-0 z-0 bg-grid-pattern pointer-events-none" aria-hidden="true"></div>
 
     <div class="z-10 w-full max-w-2xl bg-gray-800 rounded-lg shadow-2xl border border-gray-700 overflow-hidden">
         
@@ -40,18 +40,19 @@
 
             <div>
                 <p><span class="text-blue-400">➜</span> <span class="text-purple-400">~</span> npm run deploy</p>
+                
                 <div class="text-yellow-300 mt-2 space-y-1">
-    <p>> Compilando a nova versão...</p>
-    <p>> Instalando nyan-cat-loader@4.2.0...</p>
-</div>
+                    <p>> Compilando a nova versão...</p>
+                    <p>> Carregando assets...</p>
+                </div>
 
-<div class="w-full h-6 bg-gray-900 rounded-full mt-4 border border-gray-700 relative overflow-visible">
-    <div class="nyan-trail-container">
-        <img src="https://i.gifer.com/origin/3f/3fcf565ccc553af9d89632b80d9fd45a_w200.gif" 
-             class="nyan-cat-gif" 
-             alt="Nyan Cat Progress">
-    </div>
-</div>
+                <div class="w-full h-6 bg-gray-900 rounded-full mt-4 border border-gray-700 relative overflow-visible">
+                    <div class="nyan-trail-container">
+                        <img src="https://i.gifer.com/origin/3f/3fcf565ccc553af9d89632b80d9fd45a_w200.gif" 
+                             class="nyan-cat-gif" 
+                             alt="Nyan Cat Progress">
+                    </div>
+                </div>
             </div>
 
             <div class="mt-8 border-t border-gray-600 pt-6">
