@@ -36,3 +36,46 @@ body {
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
 }
+
+/* --- ANIMAÇÃO NYAN CAT PROGRESS BAR --- */
+
+/* 1. O Container da Trilha (O Arco-íris) */
+.nyan-trail-container {
+    /* Começa com largura 0 e vai crescer */
+    width: 0%;
+    height: 100%;
+    /* Gradiente clássico do arco-íris do Nyan Cat (listrado) */
+    background: linear-gradient(
+        to bottom,
+        #FF0000 0%, #FF0000 16.6%,
+        #FF9900 16.6%, #FF9900 33.2%,
+        #FFFF00 33.2%, #FFFF00 49.8%,
+        #33FF00 49.8%, #33FF00 66.4%,
+        #0099FF 66.4%, #0099FF 83%,
+        #6633FF 83%, #6633FF 100%
+    );
+    /* Aplica a animação */
+    animation: nyanProgress 8s linear infinite;
+    border-radius: 9999px 0 0 9999px; /* Arredonda só o começo */
+    position: relative;
+}
+
+/* 2. A Animação de crescimento */
+@keyframes nyanProgress {
+    0% { width: 5%; }  /* Começa um pouquinho cheio pra caber o gato */
+    100% { width: 100%; } /* Enche até o final */
+}
+
+/* 3. O Gato (GIF) */
+.nyan-cat-gif {
+    position: absolute;
+    /* Posiciona o gato na ponta direita da trilha de arco-íris */
+    right: -20px; /* -20px faz ele "sair" um pouco da barra */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    height: 35px; /* Altura do gato */
+    width: auto;
+    z-index: 20;
+    /* Adiciona um filtro para deixar o gato com visual mais "pixel art retrô" no escuro */
+    filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.5));
+}
