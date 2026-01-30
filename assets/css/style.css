@@ -8,10 +8,9 @@
 .cursor-blink {
     display: inline-block;
     width: 10px;
-    height: 20px;
+    height: 18px;
     background-color: #4ade80;
     vertical-align: middle;
-    margin-left: 4px;
     animation: blink 1s step-end infinite;
 }
 
@@ -27,31 +26,28 @@
 
 .btn-glow:hover {
     box-shadow: 0 0 25px rgba(37, 99, 235, 0.8);
-    background-color: #2563eb;
-    transform: translateY(-1px);
 }
 
 .rainbow-progress-bar {
-    width: 0%;
+    width: 99%;
     background: linear-gradient(90deg, #ff0000, #ff9900, #ffff00, #33ff00, #0099ff, #6633ff);
-    animation: expand 8s linear infinite;
+    animation: expandToLimit 4s ease-out forwards;
     display: flex;
-    align-items: center;
     justify-content: flex-end;
     position: relative;
 }
 
 .sparkle-effect {
-    width: 30px;
+    width: 40px;
     height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    filter: blur(5px);
-    box-shadow: 0 0 15px 2px white;
+    background: rgba(255, 255, 255, 0.9);
+    filter: blur(8px);
+    box-shadow: 0 0 20px white;
 }
 
-@keyframes expand {
+@keyframes expandToLimit {
     0% { width: 0%; }
-    100% { width: 100%; }
+    100% { width: 99%; }
 }
 
 body {
