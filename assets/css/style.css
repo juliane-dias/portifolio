@@ -1,6 +1,4 @@
-/* --- style.css --- */
-
-/* 1. Grade (Grid) */
+/* --- Grade de Fundo --- */
 .bg-grid-pattern {
     background-size: 50px 50px;
     background-image: 
@@ -8,12 +6,12 @@
         linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
 }
 
-/* 2. Cursor Piscando */
+/* --- Cursor Piscando --- */
 .cursor-blink {
     display: inline-block;
     width: 10px;
     height: 20px;
-    background-color: #4ade80; /* green-400 */
+    background-color: #4ade80;
     vertical-align: middle;
     margin-left: 4px;
     animation: blink 1s step-end infinite;
@@ -24,7 +22,7 @@
     50% { opacity: 0; }
 }
 
-/* 3. Botão com Glow */
+/* --- Botão LinkedIn Glow --- */
 .btn-glow {
     box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
     transition: all 0.3s ease;
@@ -36,11 +34,10 @@
     transform: translateY(-1px);
 }
 
-/* 4. Animação Nyan Cat */
+/* --- Animação Nyan Cat --- */
 .nyan-trail-container {
     width: 0%;
     height: 100%;
-    /* Gradiente do arco-íris */
     background: linear-gradient(
         to bottom,
         #FF0000 0%, #FF0000 16.6%,
@@ -53,25 +50,25 @@
     animation: nyanProgress 8s linear infinite;
     border-radius: 9999px 0 0 9999px;
     position: relative;
+    display: flex;
+    align-items: center; /* Centraliza o gato verticalmente na barra */
 }
 
 @keyframes nyanProgress {
-    0% { width: 5%; }
+    0% { width: 10%; }
     100% { width: 100%; }
 }
 
 .nyan-cat-gif {
     position: absolute;
-    right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 35px;
+    right: -20px; /* Posiciona o gato na frente da trilha */
+    height: 45px; /* Tamanho do gatinho */
     width: auto;
     z-index: 20;
-    filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.5));
+    image-rendering: pixelated; /* Mantém o estilo retro */
 }
 
-/* 5. Reset Básico */
+/* --- Reset Geral --- */
 body {
     margin: 0;
     padding: 0;
