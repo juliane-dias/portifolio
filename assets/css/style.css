@@ -1,339 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Satisfy&display=swap');
-body{
-    background: linear-gradient(269.85deg, #041832 27.26%, #3468A7 96.03%);
-    font-family: 'Roboto', sans-serif;
+/* Definição de variáveis e fontes */
+:root {
+    --bg-color: #111827; /* gray-900 */
+    --terminal-bg: #1f2937; /* gray-800 */
 }
 
-.fundo{
-    background: #ECF4FF;
-    margin: 15px;
-    border-radius: 20px;
-    box-shadow: 6px 6px 6px #0E1D2F;
-    color: #1c1c1c;
-    padding: 64px;
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--bg-color);
 }
 
-.cabecalho {
-    display: flex;
-    align-items:flex-start ;
-    padding-left: 20%;
+/* O Grid estilo "Matrix" no fundo */
+.bg-grid-pattern {
+    background-image: 
+        linear-gradient(#333 1px, transparent 1px), 
+        linear-gradient(90deg, #333 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.1;
 }
 
-.perfil{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Animação do cursor piscando */
+.cursor-blink {
+    display: inline-block;
+    width: 0.5rem;
+    height: 1rem;
+    background-color: #4ade80; /* green-400 */
+    vertical-align: middle;
+    margin-left: 0.25rem;
+    animation: blink 1s step-end infinite;
 }
 
-.fotoPerfil{
-    border-radius: 400px;
-    max-height: 160px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
-.textoCabecalho{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Efeito de brilho customizado no botão */
+.btn-glow {
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+    transition: all 0.3s ease;
 }
 
-.textoCabecalho h1{
-    font-weight: 700;
-    font-size: 36px;
+.btn-glow:hover {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.7);
+    background-color: #3b82f6; /* blue-500 */
 }
-
-.textoCabecalho h3{
-    font-weight: 400;
-    font-size: 20px;
-}
-
-.redesSociais{
-    display: flex;
-    justify-content: center;
-
-}
-
-.linkRedes{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 7px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 4px rgb(16 16 16 / 42%);
-    padding: 6px;
-}
-
-.linkRedes a, 
-.menu a,
-.redesSociais li{
-    text-decoration: none;
-    list-style-type: none;
-    color: #1c1c1c;
-}
-
-.temaBtn button a{
-    display: none;
-}
-
-.temaBtn button,
-.inicioMobile button,
-.inicio button {
-    border: 0px;
-    background: #ECF4FF;
-}
-
-.temaBtn button img{
-    content: url(../img/dark_mode.png);
-    margin-left: 18%;
-}
-
-@media screen and (max-width: 400px)
-{
-    .cabecalho{
-        padding-left: 10%;
-    }
-
-    .linkRedes{
-        margin: 3px;
-    }
-}
-
-@media screen and (min-width: 768px){
-    .cabecalho{
-        justify-content: space-evenly;
-    }
-
-    .perfil {
-        margin-left: 9%;
-    }
-
-    .redesSociais {
-        justify-content: space-evenly;
-        margin-top: 2%;
-    }
-
-
-}
-
-@media screen and (min-width: 1000px){
-    .container{
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .fundo{
-        margin: 40px;
-    }
-
-    .cabecalho{
-        padding-left: 0%;
-    }
-    .perfil{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    .textoCabecalho{
-        display: inline;
-        margin-left: 16px;
-    }
-
-    .textoCabecalho h3{
-        font-size: 24px;
-    }
-
-    .redesSociais{
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-top: 0%;
-    }
-
-    .linkRedes{
-        margin: 16px;
-        padding: 12px;
-        transition: 0.5s ease-in-out;
-        cursor: pointer;
-    }
-    
-    .linkRedes a, 
-    .menu a,
-    .redesSociais li{
-        text-decoration: none;
-        list-style-type: none;
-        list-style: none;
-        color: #1c1c1c;
-    }
-    
-    
-    .imgGit,
-    .imgIns{
-        display: none;
-    }
-
-.github:hover{
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    background: #000000;
-    transition: 0.4s ease-in-out;    
-}
-
-.github:hover .imgGit{
-    display: flex;
-}
-
-.github:hover a,
-.linkedin:hover a,
-.instagram:hover a,
-.whatsapp:hover a,
-.email:hover a{
-    color: #ffffff;
-}
-
-.linkedin:hover {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    background: #80c0df;
-    transition: 0.4s ease-in-out;
-}
-
-.linkedin:hover a{
-    color: #FFFFFF;
-}
-
-.instagram:hover{
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    background: linear-gradient(218.65deg, #0043e4 15.49%, #e920ad 71.19%);
-    transition: 0.4s ease-in-out;
-}
-
-.email:hover{
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    background: #499CFE;
-    transition: 0.4s ease-in-out;
-}
-
-.temaBtn button a {
-    display: inline;
-}
-
-.temaBtn button img{
-    display: none;
-}
-
-.temaBtn button,
-.inicio button{
-    align-self: flex-end;
-    font-weight: 400;
-    font-size: 24px;
-    padding: 8px 16px;
-    border-radius: 100px;
-    white-space: nowrap;
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonborder;
-    border-image: initial;
-}
-
-.colunas{
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-.projetos{
-    background: linear-gradient(230.65deg, #499CFE 27.49%, #9CC8FC 83.19%);
-    box-shadow: 2px 2px 4px rgba(16, 16, 16, 0.42);
-    border-radius: 20px;
-    padding: 32px;
-}
-
-.linkProjeto{
-    padding: 0px 60px;
-}
-
-.dark .temaBtn button,
-.dark .inicio button
-{
-    background: #1c1c1c;
-    color: #f6f6f6;
-    border: 2px solid #f7f7f7;
-}
-
-}
-
-.projetos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 32px;
-}
-
-.tituloProjeto,
-.pContato{
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 56px;
-    list-style: none;
-
-}
-
-.linkProjeto{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 42px;
-    list-style: none;
-    color: #1c1c1c;
-}
-
-.nomeProjeto a{
-    white-space: nowrap;
-    font-weight: 400;
-    font-size: 28px;
-    list-style: none;
-    list-style-type: none;
-    text-decoration: none;
-    color: #1c1c1c;
-}
-
-.dark {
-    background: linear-gradient(269.85deg, #375B86 27.26%, #6B87A9 96.03%);
-}
-
-.dark .fundo {
-    background: #333439;
-    color: #f6f6f6;
-}
-
-.dark .projetos,
-.dark .nomeProjeto a{
-    color: #f6f6f6;
-}
-
-.dark .temaBtn button,
-.dark .inicioMobile button,
-.dark .inicio button{
-    background: #333439;
-}
-
-.dark .temaBtn button img {
-    content: url(../img/sun_icon.png);
-    color: #ffffff;
-    margin-left: 18%;
-}
-
-.dark .temaBtn a,
-.dark .linkRedes a,
-.dark .inicio a {
-    color: #f6f6f6;
-}
-
-
