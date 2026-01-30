@@ -10,11 +10,17 @@ body {
 
 /* O Grid estilo "Matrix" no fundo */
 .bg-grid-pattern {
-    background-image: 
-        linear-gradient(#333 1px, transparent 1px), 
-        linear-gradient(90deg, #333 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.1;
+    /* Define o tamanho do quadradinho */
+    background-size: 40px 40px;
+    
+    /* Cria as linhas do grid (brancas com 5% de opacidade para ficar sutil) */
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        
+    /* (Opcional) Faz o grid desaparecer suavemente nas bordas para não cortar seco */
+    mask-image: linear-gradient(to bottom, transparent, 5%, white, 95%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, 5%, white, 95%, transparent);
 }
 
 /* Animação do cursor piscando */
@@ -43,4 +49,5 @@ body {
     box-shadow: 0 0 25px rgba(37, 99, 235, 0.7);
     background-color: #3b82f6; /* blue-500 */
 }
+
 
